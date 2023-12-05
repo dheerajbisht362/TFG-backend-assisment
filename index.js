@@ -10,7 +10,7 @@ const port = process.env.PORT ;
 app.use(bodyParser.json());
 
 import userController from "./controller/user.controller.js";
-import gameDataController from "./controller/gameDate.controller.js";
+import gameDataController from "./controller/gameData.controller.js";
 
 app.use("/user", userController);
 app.use("/gameData", gameDataController);

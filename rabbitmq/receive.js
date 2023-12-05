@@ -28,11 +28,7 @@ async function receive() {
             fs.appendFile(logFilePath, `${receivedMessage}\n`, (err) => {
             if (err) {
               console.error(`Error writing to log file: ${err.message}`);
-            }else { 
-                // Get the file contents after the append operation 
-                console.log("\nFile Contents of file after append:", 
-                  fs.readFileSync(logFilePath, "utf8")); 
-              } 
+            }
           });
 
         // Acknowledge the message to remove it from the queue
