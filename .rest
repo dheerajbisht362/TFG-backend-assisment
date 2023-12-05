@@ -1,0 +1,58 @@
+POST http://localhost:3000/user/register HTTP/1.1
+content-type: application/json
+
+{
+    "username": "sample",
+    "password": "11565text",
+    "email": "db@gmail.com",
+    "fullName": "Dheeraj B"
+}
+###
+
+POST http://localhost:3000/user/login HTTP/1.1
+content-type: application/json
+
+{
+    "username": "sample",
+    "password": "11565text"
+}
+
+###
+
+POST http://localhost:3000/gameData HTTP/1.1
+content-type: application/json
+Authorization: token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoic2FtcGxlIiwiaWF0IjoxNzAxNzU1NjI2fQ.88xebZTnyKIdRW-lzb63wczH-EAPnFLuGc82XNhIoSw
+
+{
+    "GameDataId": "25",
+    "Speed": "25",
+    "Height": "25",
+    "Weight": "25",
+    "Impact": "25"
+}
+###
+
+GET http://localhost:3000/gameData/656ebaff364c351b9f5d00b8 HTTP/1.1
+content-type: application/json
+Authorization: token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoic2FtcGxlIiwiaWF0IjoxNzAxNzU1NjI2fQ.88xebZTnyKIdRW-lzb63wczH-EAPnFLuGc82XNhIoSw
+
+
+###
+
+PUT http://localhost:3000/gameData/656ebaff364c351b9f5d00b8 HTTP/1.1
+content-type: application/json
+Authorization: token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoic2FtcGxlIiwiaWF0IjoxNzAxNzU1NjI2fQ.88xebZTnyKIdRW-lzb63wczH-EAPnFLuGc82XNhIoSw
+
+{
+    "GameDataId": "235",
+    "Speed": "235",
+    "Height": "235",
+    "Weight": "235",
+    "Impact": "235"
+}
+
+###
+
+DELETE http://localhost:3000/gameData/:id HTTP/1.1
+content-type: application/json
+Authorization: token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoic2FtcGxlIiwiaWF0IjoxNzAxNzQ2ODEwfQ.ToYMVSh85CXlERREQLjgfcS13HPpyYNwoSxu_h177-A
