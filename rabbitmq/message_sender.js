@@ -1,6 +1,6 @@
 import amqplib from 'amqplib';
 
-const queue = process.env.QUEUE_NAME;
+const queue = process.env.QUEUE_NAME || "register_queue";
 const rabbitmqUrl = process.env.RABBITMQ_URL || 'amqp://localhost';
 
 
@@ -12,7 +12,7 @@ export default async function message_sender(text){
 
     await channel.assertQueue(queue, { durable: false });
     channel.sendToQueue(queue, Buffer.from(JSON.stringify(text)));
-    console.log(" [x] Sent '%s'", text);
+    console.log("Message Sent", text);
     await channel.close();
   } catch (err) {
     console.warn(err);
